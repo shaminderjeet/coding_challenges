@@ -1,18 +1,29 @@
 
-const pluscounter=document.getElementsById("increment-counter")
+const pluscounter=document.getElementById("increment-counter")
 console.log(pluscounter)
-const minuscounter=document.getElementsById("decrement_counter")
-const total=document.getElementsById("totalvalue")
+const minuscounter=document.getElementById("decrement-counter")
+const total=document.getElementById("totalvalue")
 
 let count=0;
 total.innerHTML=count;
-console.log(total)
+
 let increment=()=>{
-    count++;
+count++;
+total.innerHTML=count;
 }
-increment()
+let decrement=()=>{
+      if(count==0){
+        return
+    }
+    else{
+        count--;
+        total.innerHTML=count;
+    }
+}
+    
 
-increment()
-increment()
+pluscounter.addEventListener("click",increment)
 
-console.log(count)
+minuscounter.addEventListener("click",decrement)
+
+
